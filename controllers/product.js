@@ -7,3 +7,10 @@ exports.count = function(req, res) {
         res.render('product-count', {count})
     })
 }
+
+exports.testview = function(req, res) {
+    Product.findOne({name: 'product1'}, function(err, product) {
+        console.log(product)
+        res.render('product-read',{title: product.name, name: product.name, price: product.price})
+    })
+}
