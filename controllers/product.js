@@ -25,10 +25,15 @@ exports.view_one = function(req, res) {
 }
 
 exports.create = function(req, res) {
-    //console.log(req.body)
+    console.log(req.body)
     //res.render('index', {})
-    let newProduct = new Product(req.body)
+    let newProduct = new Product({name: req.body.name, price: req.body.price})
     newProduct.save(function(err) {
-        res.render('index', {title:err})
+        res.redirect('/products/'+req.body.name)
+        //res.render('product-read', {title:'Add successful', name: req.body.name, price:req.body.price})
     })
+}
+
+exports.product_form = function(req, res) {
+    res.render('product-form', {title: 'New Product'})
 }

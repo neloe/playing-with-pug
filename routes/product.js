@@ -9,8 +9,8 @@ router.get('/testview', product_controller.testview)
 
 // CRUD
 //CREATE
-// router.get('/newProduct', render new product form)
-router.post('/', product_controller.create)
+router.get('/newProduct', product_controller.product_form)
+router.post('/newProduct', product_controller.create)
 
 //READ
 // router.get('/', product_controller.list_all)
