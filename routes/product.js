@@ -14,7 +14,7 @@ router.post('/newProduct', product_controller.create)
 
 //READ
 // router.get('/', product_controller.list_all)
-router.get('/:productName', product_controller.view_one)
+router.get('/:productID', product_controller.view_one)
 
 //UPDATE
 // router.post('/:productName', product_controller.update_one)
