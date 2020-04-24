@@ -17,9 +17,11 @@ exports.testview = function(req, res) {
 
 exports.view_one = function(req, res) {
     Product.findOne({pid: req.params.productID}, function(err, product) {
-        let imgsrc = product.imgsrc || 'images/cool-s.png'
         if (product)
+        {
+            let imgsrc = product.imgsrc || 'images/cool-s.png'
             res.render('product-read',{title: product.name, name: product.name, price: product.price, imgsrc:imgsrc})
+        }
         else
             res.render('index', {title:'Error'})
     })
