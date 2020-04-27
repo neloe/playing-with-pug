@@ -1,7 +1,7 @@
 extends layout
 
 block content
-    h1 Register User
+    h1 Login
 
     form(method='POST' action='')
         .form-group
@@ -9,5 +9,5 @@ block content
             input#uname.form-control(type='text', name='username')
         .form-group
             label(for='pw') Password:
-            input#pw.form-control(type='password', name='pw')
-        button.btn.btn-primary(type='submit') Register
+            input#pw.form-control(type='password', name='password')
+        button.btn.btn-primary(type='submit') Login
