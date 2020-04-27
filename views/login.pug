@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    h1 Register User
+
+    form(method='POST' action='')
+        .form-group
+            label(for='uname') Username:
+            input#uname.form-control(type='text', name='username')
+        .form-group
+            label(for='pw') Password:
+            input#pw.form-control(type='password', name='pw')
+        button.btn.btn-primary(type='submit') Register
