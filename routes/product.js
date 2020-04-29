@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 const product_controller = require('../controllers/product')
+const auth_req = require('../middleware/auth').auth_req
 
 //change to use controller
 router.get('/count', product_controller.count)
@@ -9,7 +10,7 @@ router.get('/testview', product_controller.testview)
 
 // CRUD
 //CREATE
-router.get('/newProduct', product_controller.product_form)
+router.get('/newProduct', auth_req, product_controller.product_form)
 router.post('/newProduct', product_controller.create)
 
 //READ
